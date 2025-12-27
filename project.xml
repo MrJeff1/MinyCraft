@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+    <meta title="MinyCraft" package="com.minycraft" version="1.0.0" company="Sheldi Pierre" />
+    <app main="Main" path="export" file="MinyCraft" />
+    
+    <window width="1280" height="720" fps="60" background="#000000" 
+            hardware="true" vsync="true" antialiasing="0" />
+    
+    <source path="Source" />
+    
+    <assets path="assets/images" rename="images" />
+    <assets path="assets/sounds" rename="sounds" />
+    <assets path="assets/data" rename="data" />
+    <assets path="assets/mods" rename="mods" />
+    
+    <haxelib name="openfl" />
+    <haxelib name="flixel" />
+    <haxelib name="flixel-addons" />
+    <haxelib name="flixel-ui" />
+    <haxelib name="hscript" />
+    
+    <icon path="assets/icon.png" />
+    
+    <section if="html5">
+        <window width="1280" height="720" />
+    </section>
+</project>
