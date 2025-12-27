@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MinyCraft - 2D Minecraft Clone</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Reset & base */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Roboto", sans-serif;
+        line-height: 1.6;
+        background: #1a1a1a;
+        color: #f0f0f0;
+      }
+
+      a {
+        color: #4caf50;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      img {
+        max-width: 100%;
+      }
+
+      /* Header */
+      header {
+        background: #111;
+        padding: 2rem;
+        text-align: center;
+      }
+
+      header img {
+        width: 100px;
+        margin-bottom: 1rem;
+      }
+
+      header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+        color: #4caf50;
+      }
+
+      header p {
+        font-size: 1.2rem;
+        color: #aaa;
+      }
+
+      /* Container */
+      .container {
+        max-width: 1000px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+      }
+
+      /* Sections */
+      section {
+        margin-bottom: 3rem;
+      }
+
+      section h2 {
+        font-size: 2rem;
+        color: #4caf50;
+        margin-bottom: 1rem;
+        border-bottom: 2px solid #4caf50;
+        padding-bottom: 0.5rem;
+      }
+
+      section h3 {
+        font-size: 1.5rem;
+        margin-top: 1.5rem;
+        margin-bottom: 0.5rem;
+        color: #8bc34a;
+      }
+
+      ul {
+        margin-left: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      li {
+        margin-bottom: 0.5rem;
+      }
+
+      code {
+        background: #222;
+        padding: 2px 5px;
+        border-radius: 4px;
+        font-family: monospace;
+        color: #4caf50;
+      }
+
+      pre {
+        background: #222;
+        padding: 1rem;
+        border-radius: 6px;
+        overflow-x: auto;
+        margin-bottom: 1rem;
+      }
+
+      blockquote {
+        border-left: 4px solid #4caf50;
+        padding-left: 1rem;
+        color: #ccc;
+        margin: 1rem 0;
+      }
+
+      /* Footer */
+      footer {
+        background: #111;
+        padding: 2rem;
+        text-align: center;
+        color: #888;
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img src="assets/icon.png" alt="MinyCraft Logo" />
+      <h1>MinyCraft</h1>
+      <p>A 2D Minecraft clone built with Haxe, OpenFL, and HaxeFlixel</p>
+    </header>
+
+    <div class="container">
+      <section id="features">
+        <h2>Features</h2>
+
+        <h3>Core Gameplay</h3>
+        <ul>
+          <li>
+            <strong>Survival Mode:</strong> Mine blocks, gather resources,
+            survive
+          </li>
+          <li>
+            <strong>Creative Mode:</strong> Unlimited blocks, flying, no
+            health/hunger
+          </li>
+          <li>
+            <strong>Inventory System:</strong> 36-slot inventory with 9-slot
+            hotbar
+          </li>
+          <li>
+            <strong>Crafting:</strong> Basic crafting system (to be expanded)
+          </li>
+        </ul>
+
+        <h3>World Generation</h3>
+        <ul>
+          <li>
+            <strong>Procedural Terrain:</strong> Infinite world generation
+          </li>
+          <li>
+            <strong>Biomes:</strong> Plains, mountains, deserts, forests, oceans
+          </li>
+          <li><strong>Caves:</strong> Natural cave systems</li>
+          <li><strong>Ores:</strong> Coal, iron, gold, diamond</li>
+          <li><strong>Trees:</strong> Procedurally generated trees</li>
+        </ul>
+
+        <h3>Graphics & UI</h3>
+        <ul>
+          <li>Title Screen with game options</li>
+          <li>World Manager: Create, load, delete worlds</li>
+          <li>Options Menu: Graphics, sound, controls</li>
+          <li>Hotbar: Quick item selection</li>
+          <li>Health/Hunger System: Survival mechanics</li>
+        </ul>
+
+        <h3>Mod Support</h3>
+        <ul>
+          <li>Mod Loader: Load mods from /mods folder</li>
+          <li>Block Registration: Add custom blocks via JSON</li>
+          <li>API System: Extensible modding API</li>
+        </ul>
+      </section>
+
+      <section id="controls">
+        <h2>Controls</h2>
+
+        <h3>Movement</h3>
+        <ul>
+          <li>W/A/S/D or Arrow Keys: Move</li>
+          <li>Space: Jump</li>
+          <li>Shift: Sneak (survival) / Fly down (creative)</li>
+        </ul>
+
+        <h3>Gameplay</h3>
+        <ul>
+          <li>Left Click: Mine/attack</li>
+          <li>Right Click: Place block/use item</li>
+          <li>1-9: Select hotbar slot</li>
+          <li>Mouse Wheel: Cycle hotbar</li>
+          <li>E: Open inventory</li>
+          <li>G: Toggle game mode (creative only)</li>
+          <li>ESC: Pause menu</li>
+        </ul>
+
+        <h3>UI</h3>
+        <ul>
+          <li>Enter: Confirm/select</li>
+          <li>Tab: Next field</li>
+          <li>ESC: Back/cancel</li>
+        </ul>
+      </section>
+
+      <section id="installation">
+        <h2>Installation</h2>
+
+        <h3>Prerequisites</h3>
+        <ol>
+          <li>
+            Install Haxe:
+            <a href="https://haxe.org/download/" target="_blank"
+              >https://haxe.org/download/</a
+            >
+          </li>
+          <li>Install OpenFL: <code>haxelib install openfl</code></li>
+          <li>Install HaxeFlixel: <code>haxelib install flixel</code></li>
+          <li>
+            Install additional libraries:
+            <ul>
+              <li>haxelib install flixel-addons</li>
+              <li>haxelib install flixel-ui</li>
+              <li>haxelib install hscript</li>
+            </ul>
+          </li>
+        </ol>
+
+        <h3>Building & Running</h3>
+        <pre><code>lime test html5   # For web version
+lime test windows # For Windows
+lime test mac     # For Mac
+lime test linux   # For Linux</code></pre>
+        <p>
+          Run the game from the export folder or directly with
+          <code>lime test [target]</code>.
+        </p>
+      </section>
+
+      <section id="modding">
+        <h2>Modding</h2>
+        <p>
+          Create a folder in <code>/assets/mods/</code> and add a
+          <code>mod.json</code>:
+        </p>
+        <pre><code>{
+  "id": "your_mod_id",
+  "name": "Your Mod Name",
+  "version": "1.0.0",
+  "author": "Your Name",
+  "description": "Mod description"
+}</code></pre>
+        <p>Add blocks in <code>blocks.json</code>:</p>
+        <pre><code>[
+  {
+    "id": "custom_block",
+    "name": "Custom Block",
+    "color": "#FF0000",
+    "hardness": 1.5,
+    "drops": ["your_mod_id:custom_block"],
+    "transparent": false
+  }
+]</code></pre>
+      </section>
+
+      <section id="development">
+        <h2>Development</h2>
+        <h3>Adding New Blocks</h3>
+        <ul>
+          <li>Add to BlockType enum in <code>world/Block.hx</code></li>
+          <li>Define block properties in <code>loadBlockData()</code></li>
+          <li>Add color in <code>getColor()</code></li>
+        </ul>
+
+        <h3>Adding New Features</h3>
+        <ul>
+          <li>Create new classes in appropriate directories</li>
+          <li>Update existing systems as needed</li>
+          <li>Test thoroughly</li>
+        </ul>
+
+        <h3>Current Limitations</h3>
+        <ul>
+          <li>Simple graphics (colored blocks only)</li>
+          <li>Basic physics</li>
+          <li>Limited mobs/entities</li>
+          <li>Simple crafting system</li>
+        </ul>
+
+        <h3>Planned Features</h3>
+        <ul>
+          <li>Mobs and animals</li>
+          <li>Day/night cycle</li>
+          <li>Weather system</li>
+          <li>Multiplayer support</li>
+          <li>Advanced crafting</li>
+          <li>Redstone-like mechanics</li>
+          <li>Better graphics (textures)</li>
+          <li>Sound effects & music system</li>
+          <li>Achievement system</li>
+          <li>World saving/loading</li>
+        </ul>
+      </section>
+
+      <section id="contributing">
+        <h2>Contributing</h2>
+        <ul>
+          <li>Fork the repository</li>
+          <li>Create a feature branch</li>
+          <li>Make your changes</li>
+          <li>Test thoroughly</li>
+          <li>Submit a pull request</li>
+        </ul>
+      </section>
+
+      <section id="license">
+        <h2>License & Credits</h2>
+        <p>MIT License - see LICENSE file for details.</p>
+        <p>Development: <strong>Sheldi Pierre</strong></p>
+        <p>Inspired by: Minecraft (Mojang Studios)</p>
+        <p>Built with: Haxe, OpenFL, HaxeFlixel</p>
+      </section>
+
+      <section id="support">
+        <h2>Support</h2>
+        <blockquote>
+          Enjoy MinyCraft! For issues and feature requests, please use the
+          GitHub Issues page.
+        </blockquote>
+      </section>
+    </div>
+
+    <footer>&copy; 2025 Sheldi Pierre. All rights reserved.</footer>
+  </body>
+</html>
